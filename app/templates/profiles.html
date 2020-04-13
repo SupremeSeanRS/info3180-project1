@@ -4,24 +4,23 @@
 
 {% include 'flash_messages.html' %}
 
-<div id="container">
     <div id="ProfHeading">
         <h1>Profiles</h1>
     </div>
     
     {% for user in users %}
 
-    <div class="profile-container">
-        <img class="profilepic" src="{{ url_for('static', filename='uploads/' + user.photo) }}">
-        <div class="user-info">
+    <div id="container">
+        <img id="profilepics" src="{{ url_for('static', filename='uploads/'+user.photo) }}">
+        <div id="user-info">
             <b>{{ user.first_name}} {{ user.last_name }}</b> 
-            <br/>
-            <img class ="proh" src="{{ url_for('static', filename='images/user.png') }}"> {{ user.gender }} <br/>
-            <img class ="proh" src="{{ url_for('static', filename='images/location.png') }}"> {{ user.location }}
+            <br>
+            <img class="profileheader" src="{{ url_for('static', filename='images/user.png') }}"> {{ user.gender }} <br/>
+            <img class="profileheader" src="{{ url_for('static', filename='images/location.png') }}"> {{ user.location }}
                
 
         </div>
-        <a href="{{ url_for('getProfile', userID=user.userID) }}" class ="atag" >View Profile</a>
+        <a href="{{ url_for('getProfile', userID=user.userID) }}" class="viewProfile" >View Profile</a>
     </div>
 
     <br/>
@@ -31,8 +30,3 @@
 </div>    
 
 {% endblock %}
-
- 
-   
-   
-     

@@ -4,34 +4,36 @@
 
 {% include 'flash_messages.html' %}
 
-<div id="container">
     <div id="ProfHeading">
         <h1>Add Profile</h1>
     </div>
 
-    <div id="form-container">
-        <form action="{{ url_for('profile') }}" method="POST" enctype="multipart/form-data">\
-            <b>{{ form.Fname.label }}</b>
-            {{ form.Fname}}
+    <div id="container">
+        <form action="{{ url_for('profile') }}" method="POST" enctype="multipart/form-data">
+            <br>
+            <b>{{ form.Fname.label }}</b> <br>
+            {{ form.Fname}} <br><br>
 
-            <b>{{ form.Lname.label }}</b>
-            {{ form.Lname}}
+            <b>{{ form.Lname.label }}</b> <br>
+            {{ form.Lname}} <br><br>
 
-            <b>{{ form.Gender.label }}</b>
-            {{ form.Gender}}
+            <b>{{ form.Gender.label }}</b> <br>
+            {{ form.Gender}} <br><br>
 
-            <b>{{ form.Email.label }}</b>
-            {{ form.Email}}
+            <b>{{ form.Email.label }}</b> <br>
+            {{ form.Email}} <br><br>
 
-            <b>{{ form.Location.label }}</b>
-            {{ form.Location}}
+            <b>{{ form.Location.label }}</b> <br>
+            {{ form.Location}} <br><br>
 
-            <b>{{ form.Biography.label }}</b>
-            {{ form.Biography }}
+            <b>{{ form.Biography.label }}</b> <br>
+            {{ form.Biography }} <br><br>
 
-            <b>{{ form.photo.label }}</b>
+            <b>{{ form.photo.label }}</b> <br>
             <button type="button" id="upImg"  onclick="change()">Browse...</button>
-            {{ form.photo }}
+            {{ form.photo }} 
+            
+            <br><br>
 
             {{ form.csrf_token }}
 
@@ -42,13 +44,5 @@
     
     <script type="text/javascript" src="/static/js/app.js"></script>
 
-</div>
 
 {% endblock %}
-
- 
-   
-   
-     
-   
-     

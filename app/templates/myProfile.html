@@ -4,32 +4,30 @@
 
 {% include 'flash_messages.html' %}
 
-<div class="profile-container">
+<div id="personalcontainer">
 
     
-   <img class="profilepicture" src="{{ url_for('static', filename='uploads/' + user.photo) }}">
-   <div class="personalinfo">
+   <img id="profilepicture" src="{{ url_for('static', filename='uploads/' + user.photo) }}">
+   <div id="personalinfo">
        <span id="profile-name"> 
            {{ user.first_name }} 
            {{ user.last_name }}
         </span> 
-        <br/>
+        <br><br>
 
        <img class="profile-image" src="{{ url_for('static', filename='images/mail.png') }}"> {{ user.email }}
-       <br/>
-       <img class="profile-image" src="{{ url_for('static', filename='images/location.png') }}"> {{ user.location }}
-       <br/>
-       <img class="profile-image" src="{{ url_for('static', filename='images/calendar.png') }}"> {{ user.joined }}
+       <br><br>
+       
+       <img id="locImg" src="{{ url_for('static', filename='images/location.png') }}"> {{ user.location }}
+       <br><br>
+       <img class="profile-image" src="{{ url_for('static', filename='images/calendar.png') }}"> Joined on {{ user.joined }}
    </div>
    
-   <div id="aboutme">About Me</div>
-   <div id="bio"> {{ user.bio }} </div>
+   <div id="about">About Me</div>
+   <div id="bio"> {{ user.biography }} </div>
    <button class="btnSend">Send</button>
    <button class="btnFollow">Follow</button>
 
 </div>
 
 {% endblock %}
- 
-   
-   
