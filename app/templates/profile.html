@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+{% include 'flash_messages.html' %}
+
+<div id="container">
+    <div id="ProfHeading">
+        <h1>Add Profile</h1>
+    </div>
+
+    <div id="form-container">
+        <form action="{{ url_for('profile') }}" method="POST" enctype="multipart/form-data">\
+            <b>{{ form.Fname.label }}</b>
+            {{ form.Fname}}
+
+            <b>{{ form.Lname.label }}</b>
+            {{ form.Lname}}
+
+            <b>{{ form.Gender.label }}</b>
+            {{ form.Gender}}
+
+            <b>{{ form.Email.label }}</b>
+            {{ form.Email}}
+
+            <b>{{ form.Location.label }}</b>
+            {{ form.Location}}
+
+            <b>{{ form.Biography.label }}</b>
+            {{ form.Biography }}
+
+            <b>{{ form.photo.label }}</b>
+            <button type="button" id="upImg"  onclick="change()">Browse...</button>
+            {{ form.photo }}
+
+            {{ form.csrf_token }}
+
+            <button type="submit" class="button">Add Profile</button>
+
+        </form>
+    </div>
+    
+    <script type="text/javascript" src="/static/js/app.js"></script>
+
+</div>
+
+{% endblock %}
+
+ 
+   
+   
+     
+   
+     
