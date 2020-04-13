@@ -79,9 +79,9 @@ def profiles():
 
 @app.route('/profile/<userID>', methods=["GET", "POST"])
 def getProfile(userID):
-    """ Renders profile given the userid """
+    """ Renders profile given the userID """
     user = UserProfile.query.filter_by(userID=userID).first()
-    return render_template("myprofile.html", user=user)
+    return render_template("myProfile.html", user=user)
 
 
 

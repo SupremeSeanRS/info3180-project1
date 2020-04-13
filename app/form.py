@@ -11,7 +11,7 @@ class ProfileForm(FlaskForm):
     Email = StringField('Email', validators=[DataRequired(), Email()], id="inpEmail", render_kw={"placeholder": "e.g. jdoe@example.com"})
     Location = StringField('Location', validators=[DataRequired()], id="inpLocation", render_kw={"placeholder": "e.g. Kingston,Jamaica"})
     Biography = TextAreaField('Biography', validators=[DataRequired()], id="bioText")
-    photo = FileField('Profile Picture', validators=[FileRequired(), FileAllowed(['jpg', 'png', 'jpeg'], 'Images only!')],id="proPic")
+    photo = FileField('Profile Picture', validators=[FileRequired(), FileAllowed(['jpg', 'png', 'jpeg', 'PNG'], 'Images only!')],id="proPic")
     
 
 
