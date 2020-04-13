@@ -42,7 +42,7 @@ def about():
 def profile():
     """ Render the website's profile form """
     form = ProfileForm()
-    if (request.method =="POST" and form.validate_on_submit()):
+    if (request.method == "POST" and form.validate_on_submit()):
         fname = form.Fname.data
         lname = form.Lname.data
         gender = form.Gender.data
@@ -53,9 +53,9 @@ def profile():
         filename = secure_filename(photo.filename)
         photo.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         jTime = datetime.date.today()
-        joined= jTime.strftime("%B %d, %Y") 
+        joined = jTime.strftime("%B %d, %Y") 
         userID = userIDGenerate(fname,lname)
-        user= UserProfile(fname,lname,gender,email,location,bio,filename,userID,joined)
+        user = UserProfile(fname,lname,gender,email,location,biography,filename,userID,joined)
         db.session.add(user)
         db.session.commit()
         flash('User has been created and added!', 'success')

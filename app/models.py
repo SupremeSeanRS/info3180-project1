@@ -13,19 +13,19 @@ class UserProfile(db.Model):
     gender = db.Column(db.String(80))
     email = db.Column(db.String(80))
     location = db.Column(db.String(80))
-    bio = db.Column(db.String(255))
+    biography = db.Column(db.String(255))
     photo = db.Column(db.String(80))
     userID = db.Column(db.String(80))
     joined = db.Column(db.String(255))
     
 
-    def __init__(self, first_name, last_name, gender, email, location, bio, photo,userID,joined):
+    def __init__(self, first_name, last_name, gender, email, location, biography, photo,userID,joined):
         self.first_name = first_name
         self.last_name = last_name
         self.gender = gender
         self.email =email
         self.location =location
-        self.bio = bio
+        self.biography = biography
         self.photo = photo
         self.userID = userID
         self.joined = joined
