@@ -12,9 +12,7 @@ from flask_login import login_user, logout_user, current_user, login_required
 from app.models import UserProfile
 from werkzeug.security import check_password_hash
 from app.form import ProfileForm
-from app.models import UserProfile
 from werkzeug.utils import secure_filename
-
 
 ###
 # Routing for your application.
